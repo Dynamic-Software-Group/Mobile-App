@@ -19,6 +19,7 @@ const StorePopup = ({ visible, onClose }) => {
       <Modal
         animationType="slide"
         transparent
+        main
         visible={visible}
         onRequestClose={onClose}
       >
