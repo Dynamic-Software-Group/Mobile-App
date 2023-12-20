@@ -18,7 +18,8 @@ const StorePopup = ({ visible, onClose }) => {
     <SafeAreaView>
       <Modal
         animationType="slide"
-        transparent={true}
+        transparent
+        main
         visible={visible}
         onRequestClose={onClose}
       >
