@@ -1,19 +1,18 @@
 import {
-    Button,
     Image,
     SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
-    TouchableHighlight,
-    TouchableOpacity,
+    TouchableWithoutFeedback,
     View
 } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { AntDesign } from '@expo/vector-icons';
 import { useFonts, Montserrat_100Thin, Montserrat_100Thin_Italic, Montserrat_300Light_Italic, Montserrat_200ExtraLight, Montserrat_400Regular_Italic, Montserrat_500Medium_Italic, Montserrat_200ExtraLight_Italic, Montserrat_800ExtraBold, Montserrat_600SemiBold, Montserrat_600SemiBold_Italic, Montserrat_900Black_Italic, Montserrat_300Light, Montserrat_400Regular, Montserrat_500Medium, Montserrat_700Bold, Montserrat_800ExtraBold_Italic, Montserrat_700Bold_Italic, Montserrat_900Black} from "@expo-google-fonts/montserrat";
 import * as Haptics from "expo-haptics";
-import {impactAsync} from "expo-haptics";
+import {useState} from "react";
+import Popup from "./StoreInfo";
 
 export default function App() {
     let [fontsLoaded, fontError] = useFonts({
@@ -37,6 +36,11 @@ export default function App() {
         Montserrat_700Bold_Italic,
     });
 
+    const [isPopupVisible, setPopupVisible] = useState(false);
+
+    const togglePopup = () => {
+        setPopupVisible(!isPopupVisible);
+    };
 
     return (
         <ScrollView>
@@ -78,14 +82,18 @@ export default function App() {
                         {/* Stores section */}
                         <View style={{top: hp('15%')}}>
                             <Text style={{left: wp('4.5%'), fontSize: wp('5%'), fontFamily: 'Montserrat_700Bold'}}>Near You</Text>
-                            <TouchableHighlight onPress={() => {
-                                Haptics.notificationAsync(
-                                    Haptics.NotificationFeedbackType.Success
-                                )
-
-
+                            <TouchableWithoutFeedback  style = {{width: wp('45%'), height: hp('17%')}} onPress={() => {
+                                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+                                togglePopup();
                             }}>
-                                <View style={{left: wp('3.5%'), top: hp('2%'), backgroundColor: '#eceaea', height: hp('17%'), width: wp('45%'), borderRadius: wp('4%'), shadowColor: '#000',
+                                <View style={{
+                                    left: wp('3.5%'),
+                                    top: hp('2%'),
+                                    backgroundColor: '#eceaea',
+                                    height: hp('17%'),
+                                    width: wp('45%'),
+                                    borderRadius: wp('4%'),
+                                    shadowColor: '#000',
                                     shadowOffset: {
                                         width: 2,
                                         height: 2,
@@ -109,8 +117,10 @@ export default function App() {
 
                                     </View>
                                 </View>
-                            </TouchableHighlight>
+                            </TouchableWithoutFeedback >
                         </View>
+                        <Popup visible={isPopupVisible} onClose={togglePopup} />
+
 
                     </View>
             </SafeAreaView>
