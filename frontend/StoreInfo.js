@@ -16,9 +16,7 @@ const StorePopup = ({ visible, onClose }) => {
                         <TouchableWithoutFeedback onPress={() => {
                             alert('You tapped the button!');
                         }}>
-                            <View style = {{width: wp('12%'), backgroundColor: 'white', height: hp('5%'), left: wp('5%'), borderRadius: wp('2%')}}>
-
-                            </View>
+                            <View style = {{width: wp('12%'), backgroundColor: 'white', height: hp('5%'), left: wp('5%'), borderRadius: wp('2%')}} />
                         </TouchableWithoutFeedback>
                         <TouchableOpacity onPress={onClose}>
                             <Text>Close</Text>
