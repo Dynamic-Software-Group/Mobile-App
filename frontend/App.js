@@ -100,7 +100,7 @@ export default function App() {
               height: hp("0.4%"),
               width: wp("95%"),
             }}
-          ></View>
+          />
           <View
             style={{
               left: wp("4%"),
@@ -209,7 +209,7 @@ export default function App() {
                   source={require("./assets/no_stores_found.png")}
                   resizeMethod={"resize"}
                   style={{ transform: "scale(0.7)" }}
-                ></Image>
+                />
               </View>
               <Text
                 style={{
@@ -284,7 +284,7 @@ export default function App() {
                     width: "95%",
                     height: "95%",
                   }}
-                ></Image>
+                />
                 <Text
                   style={{
                     top: hp("-4.5%"),
@@ -325,7 +325,7 @@ export default function App() {
                     height: hp("1%"),
                     top: hp("10%"),
                   }}
-                ></View>
+                />
               </View>
             </TouchableWithoutFeedback>
           </View>

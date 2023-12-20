@@ -19,7 +19,6 @@ const StorePopup = ({ visible, onClose }) => {
       <Modal
         animationType="slide"
         transparent
-        main
         visible={visible}
         onRequestClose={onClose}
       >
@@ -47,7 +46,7 @@ const StorePopup = ({ visible, onClose }) => {
                   left: wp("5%"),
                   borderRadius: wp("2%"),
                 }}
-              ></View>
+              />
             </TouchableWithoutFeedback>
             <TouchableOpacity onPress={onClose}>
               <Text>Close</Text>
