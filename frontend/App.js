@@ -77,7 +77,7 @@ export default function App() {
   };
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }} forceInset={{ bottom: 'never' }}>
          <View style={{ flex: 1 }}>
         <ScrollView style={{ flex: 1 }} onScroll={handleScroll} scrollEventThrottle={16}>
                 <View>
@@ -120,6 +120,7 @@ export default function App() {
                     </View>
                     <Popup visible={isPopupVisible} onClose={togglePopup} />
                 </View>
+            <View style={{height: hp('25%')}}></View>
         </ScrollView>
         <Nav />
         </View>
