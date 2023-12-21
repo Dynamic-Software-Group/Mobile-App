@@ -75,7 +75,7 @@ export default function App() {
                                 <View style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <Image source={require('./assets/no_stores_found.png')} resizeMethod={'resize'} style={{transform: 'scale(0.7)'}}></Image>
                                 </View>
-                                <Text style={{left: wp('28.5%'), top: hp('-4%'), fontSize: wp('5%'), fontWeight: 'bold', fontFamily: 'Montserrat_700Bold'}}>No points found</Text>
+                                <Text style={{left: wp('24%'), top: hp('-4%'), fontSize: wp('5%'), fontWeight: 'bold', fontFamily: 'Montserrat_700Bold'}}>No points found</Text>
                                 <Text style={{paddingLeft: wp('2.5%'), paddingRight: wp('2.5%'), top: hp('-3%'), fontSize: wp('4%'), fontFamily: 'Montserrat_400Regular', textAlign: 'center'}}>You have no points yet. Start shopping to earn points!</Text>
                             </View>
                         </View>
@@ -83,7 +83,7 @@ export default function App() {
                         <View style={{top: hp('15%')}}>
                             <Text style={{left: wp('4.5%'), fontSize: wp('5%'), fontFamily: 'Montserrat_700Bold'}}>Near You</Text>
                             <TouchableWithoutFeedback  style = {{width: wp('45%'), height: hp('17%')}} onPress={() => {
-                                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+                                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                                 togglePopup();
                             }}>
                                 <View style={{
