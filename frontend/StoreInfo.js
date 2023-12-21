@@ -32,6 +32,7 @@ const StorePopup = ({ visible, onClose, store }) => {
               width: wp("100%"),
               height: hp("100%"),
               top: hp("7%"),
+<<<<<<< HEAD
               borderRadius: wp("7%"),
                 shadowOffset: {
                     width: 2,
@@ -114,6 +115,30 @@ const StorePopup = ({ visible, onClose, store }) => {
 
               </View>
               </TouchableWithoutFeedback>
+=======
+              borderRadius: wp("2%"),
+            }}
+          >
+            <Text>Hello, I'm a Popup!</Text>
+            <TouchableWithoutFeedback
+              onPress={() => {
+                alert("You tapped the button!");
+              }}
+            >
+              <View
+                style={{
+                  width: wp("12%"),
+                  backgroundColor: "white",
+                  height: hp("5%"),
+                  left: wp("5%"),
+                  borderRadius: wp("2%"),
+                }}
+              />
+            </TouchableWithoutFeedback>
+            <TouchableOpacity onPress={onClose}>
+              <Text>Close</Text>
+            </TouchableOpacity>
+>>>>>>> 6367169eaa831f7f8fc03d7771787f6bc70d23cc
           </View>
         </View>
       </Modal>
