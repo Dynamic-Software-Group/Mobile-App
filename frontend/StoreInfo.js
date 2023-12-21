@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     SafeAreaView,
-    TouchableWithoutFeedback, Image,
+    TouchableWithoutFeedback, Image, Alert,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -15,10 +15,8 @@ import {
 import * as Haptics from "expo-haptics";
 import {AntDesign} from "@expo/vector-icons";
 import 'react-native-gesture-handler';
-import {Swipeable} from "react-native-gesture-handler";
-import GestureHandler from "react-native-gesture-handler/src/web_hammer/GestureHandler";
 
-const StorePopup = ({ visible, onClose }) => {
+const StorePopup = ({ visible, onClose, store }) => {
   return (
     <SafeAreaView>
       <Modal
@@ -74,7 +72,48 @@ const StorePopup = ({ visible, onClose }) => {
                       </View>
                   </TouchableWithoutFeedback>
               </View>
+              <Text style={{left: wp('5%'), top: hp('5%'), fontSize: wp('5%'), fontFamily: 'Montserrat_700Bold'}}>Restaurant One</Text>
+              <Text style={{paddingLeft: wp('5%'), paddingRight: wp('5%'), justifyContent: 'center', top: hp('8%'), fontSize: wp('3%'), fontFamily: 'Montserrat_300Light_Italic'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat interdum...</Text>
+              <Text style={{left: wp('5%'), top: hp('10%'), fontSize: wp('3%'), fontFamily: 'Montserrat_700Bold', color: '#1841d6'}}>Read More</Text>
+              {/*TODO: another popup like half of the screen with the store info*/}
+              <Text style={{left: wp('5%'), top: hp('12%'), fontSize: wp('5%'), fontFamily: 'Montserrat_700Bold'}}>Store Info</Text>
+                <Text style={{left: wp('5%'), top: hp('13%'), fontSize: wp('3%'), fontFamily: 'Montserrat_700Bold'}}>Address</Text>
+                <Text style={{left: wp('5%'), top: hp('13%'), fontSize: wp('3%'), fontFamily: 'Montserrat_300Light'}}>1234 Street Name</Text>
+                <Text style={{left: wp('5%'), top: hp('13%'), fontSize: wp('3%'), fontFamily: 'Montserrat_700Bold'}}>Hours</Text>
+                <Text style={{left: wp('5%'), top: hp('13%'), fontSize: wp('3%'), fontFamily: 'Montserrat_300Light'}}>Monday: 9:00 AM - 5:00 PM</Text>
 
+              <TouchableWithoutFeedback onPress={() => {
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                    onClose();
+                    Alert.alert(
+                        'Are you sure you want to join this store?',
+                        'You will be able to earn points and redeem rewards!',
+                        [
+                            {
+                                text: 'Cancel',
+                                onPress: () => {
+                                    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)
+                                },
+                                style: 'cancel'
+                            },
+                            { text: 'OK', onPress: () => { Alert.alert('Success', 'Successfully joined the store, you can now earn rewards!')
+                                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
+                            }}
+                        ],
+                        { cancelable: false }
+                    )
+              }} >
+              <View style={{backgroundColor: '#1f52fc', width: wp('50%'), height: hp('5%'), top: hp('15%'), left: wp('25%'), borderRadius: wp('3%'), shadowColor: '#5e7ffc', shadowOffset: {
+                      width: 3,
+                      height: 3,
+                  },
+                  shadowOpacity: 0.50,
+                  shadowRadius: 3.84,
+                  elevation: 5}}>
+                  <Text style={{color: 'white', fontSize: wp('3%'), fontFamily: 'Montserrat_700Bold', textAlign: 'center', top: hp('1.25%')}}>Join Store</Text>
+
+              </View>
+              </TouchableWithoutFeedback>
           </View>
         </View>
       </Modal>
