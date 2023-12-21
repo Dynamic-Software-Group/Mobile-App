@@ -83,7 +83,7 @@ export default function App() {
                 <View>
                     <Text style={{left: wp('5%'), top: hp('2%'), fontFamily: "Montserrat_300Light", fontSize: wp('4.25%'), fontStyle: 'normal'}}>Explore Stores</Text>
                     <Text style={{left: wp('4.5%'), top: hp('1.75%'), fontFamily: "Montserrat_400Regular", fontWeight: 400, fontSize: wp('9%')}}>Near You</Text>
-                    <View style={{left: wp('2.5%'), right: wp('2.5%'), top: hp('2%'), backgroundColor: '#D9D9D9', height: hp('0.4%'), width: wp('95%')}}></View>
+                    <View style={{left: wp('2.5%'), right: wp('2.5%'), top: hp('2%'), backgroundColor: '#D9D9D9', height: hp('0.4%'), width: wp('95%')}} />
                     <View style={{left: wp('4%'), right: wp('4%'), backgroundColor: '#F3F8FE', height: hp('5%'), top: hp('4%'), width: wp('92%'), borderRadius: wp('3.5%'), display: 'flex',  alignItems: 'center', flexDirection: 'row'}}>
                         <AntDesign name="search1" size={wp('4%')} color="black" style={{left: wp('3%'), color: '#B8B8B8'}} />
                         <Text style={{ left: wp('5%'), color: '#B8B8B8', fontSize: wp('4%')}}>Find stores...</Text>
@@ -107,7 +107,7 @@ export default function App() {
                         <View style={{}}>
                             <Text style={{left: wp('4.5%'), fontSize: wp('5%'), fontFamily: 'Montserrat_700Bold'}}>Your Points</Text>
                             <View style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                <Image source={require('./assets/no_stores_found.png')} resizeMethod={'resize'} style={{transform: 'scale(0.7)'}}></Image>
+                                <Image source={require('./assets/no_stores_found.png')} resizeMethod={'resize'} style={{transform: 'scale(0.7)'}} />
                             </View>
                             <Text style={{left: wp('24%'), top: hp('-4%'), fontSize: wp('5%'), fontWeight: 'bold', fontFamily: 'Montserrat_700Bold'}}>No points found</Text>
                             <Text style={{paddingLeft: wp('2.5%'), paddingRight: wp('2.5%'), top: hp('-3%'), fontSize: wp('4%'), fontFamily: 'Montserrat_400Regular', textAlign: 'center'}}>You have no points yet. Start shopping to earn points!</Text>
@@ -120,7 +120,7 @@ export default function App() {
                     </View>
                     <Popup visible={isPopupVisible} onClose={togglePopup} />
                 </View>
-            <View style={{height: hp('25%')}}></View>
+            <View style={{height: hp('25%')}} />
         </ScrollView>
         <Nav />
         </View>

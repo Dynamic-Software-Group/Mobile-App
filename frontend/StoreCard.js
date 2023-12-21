@@ -46,7 +46,7 @@ export default function StoreCard({ visible, onClose, store }) {
                 shadowRadius: 3.84,
                 elevation: 5,
             }}>
-                <Image source={require('./assets/one.png')} style={{resizeMode: 'contain', left: wp('1.25%'), right: wp('1.25%'), top: hp('-2%'), width: '95%', height: '95%'}}></Image>
+                <Image source={require('./assets/one.png')} style={{resizeMode: 'contain', left: wp('1.25%'), right: wp('1.25%'), top: hp('-2%'), width: '95%', height: '95%'}} />
                 <Text style={{top: hp('-4.5%'), left: wp('1.25%'), fontFamily: 'Montserrat_400Regular'}}>Restaurant One</Text>
                 <View style={{width: wp('10.5%'), height: hp('2.15%'), backgroundColor: '#3A544F', top: hp('-8.75%'), left: wp('30%'), borderRadius: wp('3%'), borderColor: '#FFFFFF', borderWidth: wp('0.7%')}}>
                     <Text style={{fontSize: wp('2%'), textAlign: 'center', fontFamily: 'Montserrat_300Light', color: 'white'}}>Food</Text>
